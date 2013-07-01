@@ -30,7 +30,7 @@ require 'trello-client/version'
 #     client.api_key = ...
 #
 #     # Set token
-#     client.token = ...
+#     client.api_token = ...
 #
 #     # Get member
 #     client.member('me') do |m|
@@ -76,7 +76,7 @@ require 'trello-client/version'
 #     end
 #
 #     # Get list with cards
-#     client.list( '<identifier>' ) do |l|
+#     client.list( '<identifier>', :cards => 'all' ) do |l|
 #       l.cards.each do |c|
 #         # Returns Trello::Client::Card object
 #         c['id']       # => card identifier
