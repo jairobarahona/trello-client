@@ -12,7 +12,7 @@ doc/
 html/
 lib/bundler/man
 out.txt
-pkg
+pkg/
 rdoc
 spec/reports
 test/tmp
