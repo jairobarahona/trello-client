@@ -4,7 +4,7 @@ require 'simplecov'
 SimpleCov.start
 
 require 'fakeweb'
-require 'mocha'
+require 'mocha/setup'
 require 'trello-client'
 require 'test/unit'
 
