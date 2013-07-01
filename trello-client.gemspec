@@ -7,8 +7,9 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Trello API client}
   gem.summary       = %q{Trello API client}
   gem.homepage      = 'https://github.com/blairc/trello-client/'
+  gem.license       = 'MIT'
 
-  gem.files         = `git ls-files`.split($\)
+  gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = 'trello-client'
@@ -17,6 +18,7 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency  'multi_json'
 
+  gem.add_development_dependency 'bundler'
   gem.add_development_dependency 'fakeweb'
   gem.add_development_dependency 'mocha'
   gem.add_development_dependency 'rake'
