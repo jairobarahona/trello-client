@@ -1,6 +1,9 @@
-.*.swp
+*.csv
 *.gem
+*.log
 *.rbc
+*.sh
+.*.swp
 .bundle
 .config
 .yardoc
@@ -9,10 +12,10 @@ InstalledFiles
 _yardoc
 coverage
 doc/
-html/
+err.txt
 lib/bundler/man
 out.txt
-pkg/
+pkg
 rdoc
 spec/reports
 test/tmp
