@@ -32,7 +32,7 @@ module Trello   # :nodoc:
       #
       # Get +Array+ of Trello::Client::Action objects
       #
-      def lists
+      def actions
         unless @actions
           @actions = ( @card['actions'] || []  ).collect { |a| Trello::Client::Action.new(a) }
         end
