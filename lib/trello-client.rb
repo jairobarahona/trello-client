@@ -6,6 +6,7 @@ require 'uri'
 
 require 'trello-client/board'
 require 'trello-client/card'
+require 'trello-client/action'
 require 'trello-client/list'
 require 'trello-client/member'
 require 'trello-client/version'
@@ -178,6 +179,38 @@ module Trello   # :nodoc:
       card = Trello::Client::Card.new( _get( "#{api}/card/#{id}", options ) )
       yield card if block_given?
       card
+    end
+
+    #
+    # Get Trello::Client::Action object
+    # 
+    # See https://trello.com/docs/api/action/index.html
+    #
+    # Params:
+    # +id+:: Action identifier
+    # +options+:: (optional) Additional API parameters
+    #
+    def action(id, options = {} )
+      raise('invalid id') if id.nil? || id.empty?
+      action = Trello::Client::Action.new( _get( "#{api}/action/#{id}", options ) )
+      yield action if block_given?
+      action
+    end
+
+    #
+    # Get Trello::Client::Action object
+    # 
+    # See https://trello.com/docs/api/card/index.html
+    #
+    # Params:
+    # +id+:: Card identifier
+    # +options+:: (optional) Additional API parameters like filters i.e. filter=updateCard:idList
+    #
+    def card_actions(id, options = {} )
+      raise('invalid id') if id.nil? || id.empty?
+      actions = Trello::Client::Card.new( _get( "#{api}/card/#{id}/actions", options ) )
+      yield actions if block_given?
+      actions
     end
 
     #

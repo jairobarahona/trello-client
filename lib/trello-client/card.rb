@@ -30,6 +30,16 @@ module Trello   # :nodoc:
       end
 
       #
+      # Get +Array+ of Trello::Client::Action objects
+      #
+      def lists
+        unless @actions
+          @actions = ( @card['actions'] || []  ).collect { |a| Trello::Client::Action.new(a) }
+        end
+        @actions
+      end
+
+      #
       # String representation.
       #
       def to_s

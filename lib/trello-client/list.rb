@@ -33,7 +33,7 @@ module Trello   # :nodoc:
       # Get +Array+ of Trello::Client::Card objects
       #
       def cards
-        unless @lists
+        unless @cards
           @cards = ( @list['cards'] || []  ).collect { |c| Trello::Client::Card.new(c) }
         end
         @cards
